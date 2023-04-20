@@ -36,4 +36,4 @@ echo -e "\e[36m>>>>> install mangodb client <<<<<<<<\e[0m"
 yum install mongodb-org-shell -y
 
 echo -e "\e[36m>>>>>>>> load schema <<<<<<<<\e[0m"
-mongo --host mongodb.devops1722.com </app/schema/catalogue.js
+mongo --host mmongodb.devops1722.com </app/schema/catalogue.js
