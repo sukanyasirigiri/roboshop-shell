@@ -1,0 +1,20 @@
+[Unit]
+Description=Payment Service
+
+[Service]
+User=root
+WorkingDirectory=/app
+Environment=CART_HOST=cart.devops1722.com
+Environment=CART_PORT=8080
+Environment=USER_HOST=user.devops1722.com
+Environment=USER_PORT=8080
+Environment=AMQP_HOST=rabbitmq.devops1722.com
+Environment=AMQP_USER=roboshop
+Environment=AMQP_PASS=roboshop123
+
+ExecStart=/usr/local/bin/uwsgi --ini payment.ini
+ExecStop=/bin/kill -9 $MAINPID
+SyslogIdentifier=payment
+
+[Install]
+WantedBy=multi-user.target
