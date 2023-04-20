@@ -30,7 +30,7 @@ systemctl enable catalogue
 systemctl start catalogue
 
 echo -e "\e[36m>>>>>>>> copy mongodb repo <<<<<<<<\e[0m"
-cp mongo.repo /etc/yum.repos.d/mongo.repo
+cp /home/centos/roboshop-shellmongo.repo /etc/yum.repos.d/mongo.repo
 
 echo -e "\e[36m>>>>> install mangodb client <<<<<<<<\e[0m"
 yum install mongodb-org-shell -y
