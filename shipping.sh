@@ -27,7 +27,7 @@ echo -e "\e[36m>>>>>>>> load schema <<<<<<<<<\e[0m"
 mysql -h mysql.devops1722.com -uroot -pRoboShop@1 < /app/schema/shipping.sql 
 
 echo -e "\e[36m>>>>>>>> setup systemdservice <<<<<<<<<\e[0m"
-cp /home/centos/Roboshop.sh/shipping.service /etc/systemd/system/shipping.service
+cp /home/centos/roboshop-shell/shipping.service /etc/systemd/system/shipping.service
 
 echo -e "\e[36m>>>>>>>> start shipping service <<<<<<<<<\e[0m"
 systemctl daemon-reload
