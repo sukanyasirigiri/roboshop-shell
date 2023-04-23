@@ -3,7 +3,6 @@ script_path=$(dirname $0)
 source ${script_path}/common.sh
 
 component=catalogue
-
 fun_nodejs
 
 echo -e "\e[36m>>>>>>>> copy mongodb repo <<<<<<<<<\e[0m"
