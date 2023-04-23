@@ -1,4 +1,6 @@
-source common.sh
+script_path=dirname $0
+source ${script_path}/common.sh
+exit
 
 
 echo -e "\e[36m>>>>>>>> configuring nodejs repos <<<<<<<<<\e[0m"
