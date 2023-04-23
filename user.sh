@@ -6,7 +6,7 @@ source ${script_path}/common.sh
 
 
 component=user
-fun_nodejs
+func_nodejs
 
 echo -e "\e[36m>>>>>>>> copy mongodb repo <<<<<<<<<\e[0m"
 cp /home/centos/Roboshop.sh/mongo.repo /etc/yum.repos.d/mongo.repo

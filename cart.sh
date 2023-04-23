@@ -4,4 +4,4 @@ script_path=$(dirname "$script")
 source ${script_path}/common.sh
 
 component=cart
-fun_nodejs
+func_nodejs
