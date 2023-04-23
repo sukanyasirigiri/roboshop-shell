@@ -5,6 +5,21 @@ source ${script_path}/common.sh
 print_head() {
 echo -e "\e[35m>>>>>>>> $1 <<<<<<<<<\e[0m"
 }
+
+schema_setup() {
+
+echo -e "\e[36m>>>>>>>> copy mongodb repo <<<<<<<<<\e[0m"
+cp ${script_path}/mongo.repo /etc/yum.repos.d/mongo.repo
+
+echo -e "\e[36m>>>>>>>> install mongodb client <<<<<<<<<\e[0m"
+yum install mongodb-org-shell -y
+
+
+echo -e "\e[36m>>>>>>>> load schema <<<<<<<<<\e[0m"
+mongo --host mongodb.devops1722.com </app/schema/${component}.js
+}
+
+
 func_nodejs() {
 
 
@@ -47,5 +62,7 @@ cp ${script_path}/${component}.service /etc/systemd/system/${component}.service
 systemctl daemon-reload
 systemctl enable ${component}
 systemctl start ${component}
+
+schema_setup
 
 }
