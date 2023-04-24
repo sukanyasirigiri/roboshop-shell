@@ -1,6 +1,7 @@
 app_user=roboshop
-script_path=$(dirname $0)
-source ${script_path}/common.sh
+script=$(realpath "0")
+script_path=$(dirname "$script")
+
 
 print_head() {
 echo -e "\e[35m>>>>>>>> $1 <<<<<<<<<\e[0m"
