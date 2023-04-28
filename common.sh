@@ -64,7 +64,7 @@ systemctl start ${component}
 
 func_nodejs() {
 
-func_ print_head "configuring nodejs repos" 
+func_print_head "configuring nodejs repos" 
 curl -sL https://rpm.nodesource.com/setup_lts.x | bash
 
 
@@ -75,7 +75,7 @@ yum install nodejs -y
 func_app_prereq
  
 
-func_ print_head "install nodejs dependencies" 
+func_print_head "install nodejs dependencies" 
 npm install 
 
 func_schema_setup
