@@ -51,7 +51,7 @@ unzip /tmp/${component}.zip
 
 func_systemd_setup() {
 
-func_print_head "copy systemd file" 
+print_head "copy systemd file" 
 cp ${script_path}/${component}.service /etc/systemd/system/${component}.service
 
 
