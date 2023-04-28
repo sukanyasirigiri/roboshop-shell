@@ -22,7 +22,7 @@ fi
 }
 
 func_schema_setup() {
-if [ "$schema_setup" == "mysql"]; then
+if [ "${schema_setup}" == "mysql"]; then
 func_print_head "install mysql"
 yum install mysql -y 
 
@@ -57,7 +57,7 @@ func_print_head "copy ${component} systemd file"
 cp ${script_path}/${component}.service /etc/systemd/system/${component}.service
 
 
-func_ print_head "start ${component} service" 
+func_print_head "start ${component} service" 
 systemctl daemon-reload
 systemctl enable ${component}
 systemctl start ${component}
