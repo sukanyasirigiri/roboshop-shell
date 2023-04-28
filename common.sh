@@ -22,7 +22,7 @@ fi
 }
 
 func_schema_setup() {
-if [ "${schema_setup}" == "mysql"]; then
+if [ "${schema_setup}" == "mysql" ]; then
 func_print_head "install mysql"
 yum install mysql -y 
 
@@ -53,7 +53,7 @@ unzip /tmp/${component}.zip
 
 func_systemd_setup() {
 
-func_print_head "copy ${component} systemd file" 
+func_print_head "copy systemd file" 
 cp ${script_path}/${component}.service /etc/systemd/system/${component}.service
 
 
