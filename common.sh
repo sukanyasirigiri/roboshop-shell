@@ -55,7 +55,7 @@ print_head "copy systemd file"
 cp ${script_path}/${component}.service /etc/systemd/system/${component}.service
 
 
-func_print_head "start ${component} service" 
+print_head "start ${component} service" 
 systemctl daemon-reload
 systemctl enable ${component}
 systemctl start ${component}
@@ -68,14 +68,14 @@ func_print_head "configuring nodejs repos"
 curl -sL https://rpm.nodesource.com/setup_lts.x | bash
 
 
- func_print_head "install nodejs" 
+ print_head "install nodejs" 
 yum install nodejs -y
 
 
 func_app_prereq
  
 
-func_print_head "install nodejs dependencies" 
+print_head "install nodejs dependencies" 
 npm install 
 
 func_schema_setup
@@ -86,13 +86,13 @@ func_systemd_setup
 
 func_java() {
 
-func_print_head "install maven"
+print_head "install maven"
 yum install maven -y
 
 
 func_app_prereq
 
-func_print_head "download maven dependencies"
+print_head "download maven dependencies"
 mvn clean package 
 mv target/${component}-1.0.jar ${component}.jar 
 
