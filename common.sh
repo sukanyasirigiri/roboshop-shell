@@ -20,8 +20,6 @@ func_print_head "load schema"
 mongo --host mongodb.devops1722.com </app/schema/${component}.js
 fi
 
-
-
 if [ "${schema_setup}" == "mysql" ]; then
 func_print_head "install mysql"
 yum install mysql -y 
@@ -42,7 +40,7 @@ rm -rf /app
 mkdir /app 
 
 
- func_print_head "download app content" 
+func_print_head "download app content" 
 curl -o /tmp/${component}.zip https://roboshop-artifacts.s3.amazonaws.com/${component}.zip 
 cd /app 
 
