@@ -21,31 +21,31 @@ mongo --host mongodb.devops1722.com </app/schema/${component}.js
 fi
 
 if [ "${schema_setup}" == "mysql" ]; then
-func_print_head "install mysql"
+print_head "install mysql"
 yum install mysql -y 
 
-func_print_head "load schema"
+print_head "load schema"
 mysql -h mysql.devops1722.com -uroot -p${mysql_root_password} < /app/schema/shipping.sql 
 fi
 }
 
 
 func_app_prereq() {
-func_print_head "add application user" 
+print_head "add application user" 
 useradd ${app_user}
 
 
- func_print_head "create application directory" 
+print_head "create application directory" 
 rm -rf /app
 mkdir /app 
 
 
-func_print_head "download app content" 
+print_head "download app content" 
 curl -o /tmp/${component}.zip https://roboshop-artifacts.s3.amazonaws.com/${component}.zip 
 cd /app 
 
 
-func_print_head "unzip app content" 
+print_head "unzip app content" 
 unzip /tmp/${component}.zip
 }
 
@@ -64,7 +64,7 @@ systemctl start ${component}
 
 func_nodejs() {
 
-func_print_head "configuring nodejs repos" 
+print_head "configuring nodejs repos" 
 curl -sL https://rpm.nodesource.com/setup_lts.x | bash
 
 
