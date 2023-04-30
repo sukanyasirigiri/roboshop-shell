@@ -12,6 +12,7 @@ if [ $1 -eq 0 ]; then
 echo -e "\e[32mSUCCESS\e[0m"
 else
 echo -e "\e[31mFAILURE\e[0m"
+echo "Refer the log file /tmp/roboshop.log for more information"
 exit 1
 fi
 }
@@ -46,7 +47,7 @@ fi
 
 func_app_prereq() {
 print_head "add application user" 
-useradd ${app_user}
+useradd ${app_user} >/tmp/roboshop.log
 func_stat_check $?
 
 
