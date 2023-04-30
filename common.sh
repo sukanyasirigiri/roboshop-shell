@@ -47,7 +47,7 @@ fi
 
 func_app_prereq() {
 print_head "add application user" 
-useradd ${app_user} &>>&>>$log_file
+useradd ${app_user} &>>$log_file
 func_stat_check $?
 
 
