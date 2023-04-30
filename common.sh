@@ -108,7 +108,7 @@ func_systemd_setup
 func_java() {
 
 print_head "install maven"
-yum install maven -y
+yum install maven -y >/tmp/roboshop.log
 func_stat_check $?
 
 
