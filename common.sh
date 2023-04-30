@@ -31,7 +31,7 @@ func_stat_check $?
 
 func_print_head "load schema"
 mongo --host mongodb.devops1722.com </app/schema/${component}.js &>>$log_file
-func_stat_check $?
+func_stat_check $? 
 fi
 
 if [ "${schema_setup}" == "mysql" ]; then
@@ -48,7 +48,10 @@ fi
 
 func_app_prereq() {
 print_head "add application user" 
-useradd ${app_user} &>>$log_file
+id ${app_user} &>>$log_file
+if [ $? -ne 0 ]; then
+  useradd ${app_user} &>>$log_file
+fi
 func_stat_check $?
 
 
