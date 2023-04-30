@@ -47,7 +47,7 @@ fi
 
 func_app_prereq() {
 print_head "add application user" 
-useradd ${app_user} >/tmp/roboshop.log
+useradd ${app_user} &>/tmp/roboshop.log
 func_stat_check $?
 
 
