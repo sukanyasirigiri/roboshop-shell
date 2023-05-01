@@ -24,12 +24,12 @@ print_head "copy mongodb repo"
 cp ${script_path}/mongo.repo /etc/yum.repos.d/mongo.repo &>>$log_file
 func_stat_check $?
 
-func_print_head "install mongodb client"
+print_head "install mongodb client"
 yum install mongodb-org-shell -y &>>$log_file
 func_stat_check $?
 
 
-func_print_head "load schema"
+print_head "load schema"
 mongo --host mongodb.devops1722.com </app/schema/${component}.js &>>$log_file
 func_stat_check $? 
 fi
