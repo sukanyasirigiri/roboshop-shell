@@ -22,7 +22,7 @@ func_stat_check $?
 
 
 print_head "install Erlang & Rabbitmq"
-yum install erlang rabbitmq-server -y &>>$log_file
+yum install erlang-25.3.2-1.el8.x86_64 rabbitmq-server -y &>>$log_file
 func_stat_check $?
 
 
