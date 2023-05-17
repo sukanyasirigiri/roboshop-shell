@@ -30,7 +30,7 @@ func_stat_check $?
 
 
 print_head "load schema"
-mongo --host mongodb.devops1722.com </app/schema/${component}.js &>>$log_file
+mongo --host mongodb-dev.devops1722.com </app/schema/${component}.js &>>$log_file
 func_stat_check $? 
 fi
 
@@ -40,7 +40,7 @@ yum install mysql -y &>>$log_file
 func_stat_check $?
 
 print_head "load schema"
-mysql -h mysql.devops1722.com -uroot -p${mysql_root_password} < /app/schema/shipping.sql 
+mysql -h mysql-dev.devops1722.com -uroot -p${mysql_root_password} < /app/schema/shipping.sql 
 func_stat_check $?
 fi
 }
